@@ -1,0 +1,2 @@
+import ExcelJS from 'exceljs';
+export async function rowsToXlsx(rows,res,filename='reporte.xlsx'){const wb=new ExcelJS.Workbook();const ws=wb.addWorksheet('Reporte');if(rows.length){ws.columns=Object.keys(rows[0]).map(k=>({header:k,key:k}));rows.forEach(r=>ws.addRow(r));}res.setHeader('Content-Type','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');res.setHeader('Content-Disposition',`attachment; filename=${filename}`);await wb.xlsx.write(res);res.end()}

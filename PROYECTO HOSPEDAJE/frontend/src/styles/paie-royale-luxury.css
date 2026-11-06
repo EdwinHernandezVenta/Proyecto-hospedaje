@@ -1,0 +1,281 @@
+/* =========================================================
+   PAIE ROYALE — SISTEMA VISUAL LUXURY
+   Capa exclusivamente visual. No modifica lógica, rutas,
+   peticiones HTTP, permisos ni comportamiento del sistema.
+========================================================= */
+:root {
+  --pr-gold: #d4af37;
+  --pr-gold-light: #f0d98a;
+  --pr-gold-dark: #b78b24;
+  --pr-ink: #05070c;
+  --pr-navy: #090e19;
+  --pr-panel: rgba(16, 21, 32, .90);
+  --pr-border: rgba(212, 175, 55, .18);
+  --pr-white: #f7f4ec;
+  --pr-muted: #a9a39a;
+}
+html { background: var(--pr-ink); }
+body {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(212,175,55,.08), transparent 25%),
+    radial-gradient(circle at 90% 12%, rgba(36,54,82,.24), transparent 28%),
+    linear-gradient(135deg,#05070c 0%,#09101b 52%,#05070c 100%);
+  color: var(--pr-white);
+}
+::selection { background: rgba(212,175,55,.24); color:#fff; }
+
+.field label {
+  color:#c3bdb2;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.015em;
+}
+input,select,textarea {
+  min-height:46px;
+  color:#f6f2e8;
+  background:rgba(4,8,15,.72);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:10px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+}
+input:hover,select:hover,textarea:hover {
+  border-color:rgba(212,175,55,.30);
+  background:rgba(7,11,19,.84);
+}
+input:focus,select:focus,textarea:focus {
+  border-color:rgba(212,175,55,.72);
+  box-shadow:0 0 0 3px rgba(212,175,55,.09),0 0 26px rgba(212,175,55,.07);
+}
+input::placeholder,textarea::placeholder { color:#716c64; }
+
+.primary {
+  color:#171208;
+  background:linear-gradient(135deg,#f1d778 0%,#d4af37 48%,#b78b24 100%);
+  border:1px solid rgba(240,217,138,.58);
+  box-shadow:0 10px 26px rgba(212,175,55,.16),inset 0 1px 0 rgba(255,255,255,.30);
+}
+.primary:hover {
+  color:#100d06;
+  background:linear-gradient(135deg,#f5df91 0%,#dcb947 50%,#bd9229 100%);
+  box-shadow:0 14px 32px rgba(212,175,55,.22);
+}
+.secondary {
+  color:#eee9de;
+  background:rgba(255,255,255,.035);
+  border-color:rgba(212,175,55,.20);
+}
+.secondary:hover {
+  background:rgba(212,175,55,.075);
+  border-color:rgba(212,175,55,.38);
+}
+.card,.stat-card,.tablewrap,.module-table-card,.reservation-create-card,.dashboard-panel {
+  border-color:var(--pr-border);
+  background:linear-gradient(145deg,rgba(18,24,35,.94),rgba(7,11,19,.96));
+  box-shadow:0 22px 55px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.025);
+}
+.page-title h1,.module-header h1,.roles-header h1,.dashboard-header h1 {
+  color:#f7f2e8;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:500;
+  letter-spacing:-.025em;
+}
+.page-title p,.module-kicker,.roles-kicker { color:#9f998f; }
+.module-kicker,.roles-kicker { color:#d0b45d; letter-spacing:.20em; }
+
+.tablewrap { overflow:auto; border-radius:14px; }
+table { background:rgba(5,9,16,.36); }
+th {
+  color:#cbb56f;
+  background:rgba(212,175,55,.055);
+  border-bottom-color:rgba(212,175,55,.14);
+}
+td { color:#ddd8ce; }
+tbody tr:hover { background:rgba(212,175,55,.045); }
+
+.stat-card {
+  min-height:138px;
+  border-radius:16px;
+  transform:none;
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.stat-card:hover {
+  transform:translateY(-3px);
+  border-color:rgba(212,175,55,.34);
+  box-shadow:0 28px 65px rgba(0,0,0,.30);
+}
+.stat-card::after { background:rgba(212,175,55,.10); }
+.stat-value { color:#f4e9c4; }
+.bar-fill,.payment-chart-bar {
+  background:linear-gradient(180deg,#efd77e,#b78c28);
+  box-shadow:0 0 18px rgba(212,175,55,.16),inset 0 1px 1px rgba(255,255,255,.30);
+}
+.payment-chart-value { color:#f3e7b9; border-color:rgba(212,175,55,.22); }
+.payment-chart-date { color:#cfc7b7; border-color:rgba(212,175,55,.12); }
+.dashboard-status-confirmed {
+  border-color:rgba(212,175,55,.18);
+  background:linear-gradient(135deg,rgba(212,175,55,.10),rgba(255,255,255,.025));
+}
+.dashboard-status-confirmed .dashboard-status-dot {
+  background:#d4af37;
+  box-shadow:0 0 11px rgba(212,175,55,.65);
+}
+
+.reservation-create-card,.payment-box,.reservation-advance-card {
+  border-color:rgba(212,175,55,.18);
+  background:linear-gradient(145deg,rgba(212,175,55,.065),rgba(11,16,26,.82));
+}
+.module-form-header,.module-table-header { border-bottom-color:rgba(212,175,55,.12); }
+.module-edit-indicator { color:#dfc66e; }
+.module-status-ok {
+  color:#d9c36d;
+  background:rgba(212,175,55,.08);
+  border-color:rgba(212,175,55,.20);
+}
+.module-search { border-color:rgba(212,175,55,.16); }
+
+.roles-page { color:#f4f0e7; }
+.roles-header h1 { font-family:Georgia,"Times New Roman",serif; font-weight:500; }
+.roles-toolbar {
+  padding:12px;
+  border:1px solid rgba(212,175,55,.10);
+  border-radius:14px;
+  background:rgba(255,255,255,.018);
+}
+.roles-table-container { border-radius:14px; border-color:rgba(212,175,55,.12); }
+.roles-modal {
+  border-color:rgba(212,175,55,.18);
+  box-shadow:0 35px 100px rgba(0,0,0,.55);
+}
+
+.login {
+  background:
+    radial-gradient(circle at 16% 18%,rgba(212,175,55,.11),transparent 28%),
+    radial-gradient(circle at 86% 78%,rgba(37,53,76,.22),transparent 30%);
+}
+.login::before { background:rgba(212,175,55,.10); }
+.login::after { background:rgba(37,53,76,.18); }
+.login-card {
+  width:min(470px,94vw);
+  padding:38px;
+  border-radius:22px;
+  background:linear-gradient(145deg,rgba(18,24,36,.95),rgba(6,10,17,.97));
+  border:1px solid rgba(212,175,55,.18);
+  box-shadow:0 38px 100px rgba(0,0,0,.52),0 0 50px rgba(212,175,55,.055);
+}
+.login-logo {
+  width:78px;height:78px;border-radius:50%;
+  color:#161106;
+  background:linear-gradient(145deg,#f2db87,#c79c2e);
+  border:2px solid rgba(240,217,138,.72);
+  box-shadow:0 0 0 7px rgba(212,175,55,.055),0 16px 34px rgba(0,0,0,.30);
+}
+.login-card h1 {
+  color:#f6f0e3;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:500;
+}
+.login-description { color:#a8a197; }
+.forgot-password a,.register-login-option a { color:#d7bb63; }
+.forgot-password a:hover,.register-login-option a:hover { color:#f2dc8b; }
+
+.register-card {
+  border-color:rgba(212,175,55,.18);
+  background:linear-gradient(145deg,rgba(18,24,36,.96),rgba(6,10,17,.98));
+  box-shadow:0 36px 95px rgba(0,0,0,.48),0 0 45px rgba(212,175,55,.045);
+}
+.register-logo {
+  color:#171208;
+  background:linear-gradient(145deg,#f2db87,#c79c2e);
+  border-color:rgba(240,217,138,.70);
+  box-shadow:0 0 0 6px rgba(212,175,55,.045),0 14px 30px rgba(0,0,0,.26);
+}
+.register-heading { color:#f5efe3; font-family:Georgia,"Times New Roman",serif; }
+.register-section-title { color:#d2b760; }
+.register-role-card {
+  border-color:rgba(255,255,255,.09);
+  background:rgba(255,255,255,.025);
+}
+.register-role-card.selected,.register-role-card.selected.admin {
+  border-color:rgba(212,175,55,.55);
+  background:linear-gradient(145deg,rgba(212,175,55,.11),rgba(255,255,255,.025));
+  box-shadow:0 10px 26px rgba(212,175,55,.07);
+}
+
+.paie-admin {
+  background:
+    radial-gradient(circle at 85% 5%,rgba(212,175,55,.075),transparent 27%),
+    radial-gradient(circle at 45% 95%,rgba(32,50,76,.12),transparent 35%),#060910;
+}
+.paie-admin-sidebar {
+  background:linear-gradient(180deg,rgba(15,19,29,.985),rgba(5,8,14,.99));
+  border-right-color:rgba(212,175,55,.13);
+  box-shadow:18px 0 55px rgba(0,0,0,.28);
+}
+.paie-admin-brand-mark {
+  color:#171208 !important;
+  background:linear-gradient(145deg,#f2db87,#c79c2e) !important;
+  border-color:rgba(240,217,138,.58) !important;
+  box-shadow:0 0 0 5px rgba(212,175,55,.045),0 10px 24px rgba(0,0,0,.28) !important;
+}
+.paie-admin-brand-text strong { color:#f2ecdf; }
+.paie-admin-brand-text span { color:#918a7e; }
+.paie-admin-nav-title { color:#8e887e; letter-spacing:.17em; }
+.paie-admin-link {
+  color:#a8a298;
+  border:1px solid transparent;
+  border-radius:10px;
+}
+.paie-admin-link:hover {
+  color:#f0e9dc;
+  background:rgba(212,175,55,.055);
+  border-color:rgba(212,175,55,.10);
+}
+.paie-admin-link.active {
+  color:#f3df91;
+  background:linear-gradient(90deg,rgba(212,175,55,.13),rgba(212,175,55,.035));
+  border-color:rgba(212,175,55,.18);
+  box-shadow:inset 3px 0 0 #d4af37;
+}
+.paie-admin-link.active .paie-admin-icon { color:#e5c866; }
+.paie-admin-user { border-top-color:rgba(212,175,55,.12); }
+.paie-admin-user-avatar {
+  color:#171208 !important;
+  background:linear-gradient(145deg,#eed477,#b98c27) !important;
+}
+.paie-admin-user-info strong { color:#eee9df; }
+.paie-admin-user-info span { color:#8f897f; }
+.paie-admin-logout { color:#aaa39a; border-color:rgba(255,255,255,.08); }
+.paie-admin-logout:hover {
+  color:#f0d778;
+  border-color:rgba(212,175,55,.24);
+  background:rgba(212,175,55,.055);
+}
+.paie-admin-topbar {
+  background:rgba(6,9,16,.78);
+  border-bottom-color:rgba(212,175,55,.11);
+  backdrop-filter:blur(18px);
+}
+.paie-admin-eyebrow { color:#d5b95d; }
+.paie-admin-section { color:#9d978e; }
+.paie-admin-online span {
+  background:#d4af37;
+  box-shadow:0 0 10px rgba(212,175,55,.70);
+}
+.paie-admin-top-user strong { color:#eee9df; }
+.paie-admin-top-user small { color:#918b81; }
+
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible {
+  outline:2px solid rgba(212,175,55,.70);
+  outline-offset:3px;
+}
+@media (max-width:900px) { .login-card { padding:30px 24px; } }
+@media (max-width:600px) {
+  .login { padding:16px; }
+  .login-card { width:min(100%,460px); padding:26px 20px; border-radius:18px; }
+  .page-title h1,.module-header h1,.roles-header h1,.dashboard-header h1 {
+    font-size:clamp(27px,8vw,36px);
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { transition-duration:.01ms !important; animation-duration:.01ms !important; }
+}

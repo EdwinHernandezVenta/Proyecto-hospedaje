@@ -1,0 +1,897 @@
+/* =========================================================
+   PAIE ROYALE — ADMIN LAYOUT
+========================================================= */
+
+.paie-admin {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(164, 128, 67, 0.16),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 60% 80%,
+      rgba(105, 125, 145, 0.07),
+      transparent 35%
+    ),
+    #070912;
+  color: #f3f1ec;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.paie-admin-sidebar {
+  width: 270px;
+  min-width: 270px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 18px 20px;
+  box-sizing: border-box;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(18, 20, 34, 0.98),
+      rgba(8, 10, 18, 0.98)
+    );
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  box-shadow: 15px 0 50px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.paie-admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 4px 10px 22px;
+}
+
+.paie-admin-brand-mark {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      #5d5874,
+      #211f32 60%,
+      #11111c
+    );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.paie-admin-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.paie-admin-brand-text strong {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #f4f1ea;
+  white-space: nowrap;
+}
+
+.paie-admin-brand-text span {
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #858497;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.paie-admin-divider {
+  height: 1px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.07);
+  margin: 0 8px 18px;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.paie-admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+.paie-admin-nav::-webkit-scrollbar {
+  width: 4px;
+}
+
+.paie-admin-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.paie-admin-nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+.paie-admin-nav-title {
+  padding: 14px 12px 7px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #666577;
+  text-transform: uppercase;
+}
+
+.paie-admin-nav-title:not(:first-child) {
+  margin-top: 8px;
+}
+
+.paie-admin-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 13px;
+  box-sizing: border-box;
+  border-radius: 11px;
+  color: #9897a7;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.paie-admin-link:hover {
+  color: #f5f3ed;
+  background: rgba(255, 255, 255, 0.055);
+  transform: translateX(2px);
+}
+
+.paie-admin-link.active {
+  color: #ffffff;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(200, 169, 107, 0.18),
+      rgba(92, 70, 35, 0.08)
+    );
+  box-shadow:
+    inset 0 0 0 1px rgba(200, 169, 107, 0.15);
+}
+
+.paie-admin-link.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  bottom: 9px;
+  width: 3px;
+  border-radius: 0 4px 4px 0;
+  background: #d8bd82;
+  box-shadow: 0 0 14px rgba(216, 189, 130, 0.55);
+}
+
+.paie-admin-icon {
+  width: 20px;
+  min-width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: #77758a;
+  flex-shrink: 0;
+}
+
+.paie-admin-link.active .paie-admin-icon {
+  color: #d8bd82;
+}
+
+/* =========================================================
+   USER
+========================================================= */
+
+.paie-admin-user {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 15px 10px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin-top: 12px;
+}
+
+.paie-admin-user-avatar {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background:
+    linear-gradient(
+      135deg,
+      #4e4864,
+      #242233
+    );
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.paie-admin-user-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.paie-admin-user-info strong {
+  color: #eeeeeb;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.paie-admin-user-info span {
+  color: #777587;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.paie-admin-logout {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 0 13px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  color: #92919f;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.paie-admin-logout:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.paie-admin-main {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.paie-admin-topbar {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 35px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(8, 10, 18, 0.68);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.paie-admin-topbar-left {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.paie-admin-eyebrow {
+  color: #c8a96b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.paie-admin-section {
+  color: #e6e4df;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.paie-admin-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.paie-admin-online {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #7f8190;
+  font-size: 10px;
+}
+
+.paie-admin-online span {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #8fa99c;
+  box-shadow: 0 0 10px rgba(143, 169, 156, 0.7);
+}
+
+.paie-admin-top-user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.paie-admin-top-user strong {
+  color: #eee;
+  font-size: 12px;
+}
+
+.paie-admin-top-user small {
+  color: #777686;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.paie-admin-top-logout {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.035);
+  color: #a7a5b2;
+  cursor: pointer;
+  font-size: 17px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.paie-admin-top-logout:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.paie-admin-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1600px;
+  padding: 34px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* =========================================================
+   BOTÓN MENÚ MÓVIL
+========================================================= */
+
+.paie-mobile-menu-button {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(10, 13, 24, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 200;
+  cursor: pointer;
+}
+
+.paie-mobile-menu-button .line {
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: #eee;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.paie-mobile-menu-button .line-1.open {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.paie-mobile-menu-button .line-2.open {
+  opacity: 0;
+}
+
+.paie-mobile-menu-button .line-3.open {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================================================
+   OVERLAY MÓVIL
+========================================================= */
+
+.paie-admin-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 90;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .paie-admin-sidebar {
+    width: 235px;
+    min-width: 235px;
+  }
+
+  .paie-admin-topbar {
+    padding: 0 22px;
+  }
+
+  .paie-admin-content {
+    padding: 25px;
+  }
+
+  .paie-admin-online {
+    display: none;
+  }
+}
+
+/* =========================================================
+   TABLET PEQUEÑA / CELULAR
+========================================================= */
+
+@media (max-width: 760px) {
+  .paie-admin {
+    display: block;
+    min-height: 100vh;
+  }
+
+  /* SIDEBAR LATERAL */
+
+  .paie-admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(290px, 86vw);
+    min-width: 0;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 22px 16px 18px;
+    transform: translateX(-105%);
+    transition: transform 0.28s ease;
+    overflow: hidden;
+    box-shadow: 20px 0 60px rgba(0, 0, 0, 0.45);
+    z-index: 100;
+  }
+
+  .paie-admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* BOTÓN */
+
+  .paie-mobile-menu-button {
+    display: flex;
+  }
+
+  /* OVERLAY */
+
+  .paie-admin-overlay {
+    display: block;
+  }
+
+  /* TOPBAR */
+
+  .paie-admin-topbar {
+    position: relative;
+    min-height: 74px;
+    padding: 15px 15px 15px 72px;
+  }
+
+  .paie-admin-topbar-left {
+    min-width: 0;
+  }
+
+  .paie-admin-eyebrow {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .paie-admin-section {
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .paie-admin-top-user {
+    display: none;
+  }
+
+  .paie-admin-topbar-right {
+    gap: 8px;
+  }
+
+  .paie-admin-top-logout {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* CONTENIDO */
+
+  .paie-admin-content {
+    padding: 18px 15px 30px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 480px) {
+  .paie-admin-sidebar {
+    width: min(285px, 88vw);
+    padding: 18px 14px 16px;
+  }
+
+  .paie-admin-brand {
+    padding: 3px 8px 18px;
+  }
+
+  .paie-admin-brand-mark {
+    width: 42px;
+    height: 42px;
+  }
+
+  .paie-admin-brand-text strong {
+    font-size: 13px;
+  }
+
+  .paie-admin-brand-text span {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+
+  .paie-admin-nav {
+    gap: 4px;
+  }
+
+  .paie-admin-nav-title {
+    padding: 11px 10px 6px;
+  }
+
+  .paie-admin-link {
+    min-height: 43px;
+    padding: 0 11px;
+    font-size: 12px;
+  }
+
+  .paie-admin-content {
+    padding: 14px 12px 25px;
+  }
+
+  .paie-admin-topbar {
+    padding-left: 68px;
+  }
+
+  .paie-admin-section {
+    font-size: 14px;
+  }
+
+  .paie-mobile-menu-button {
+    top: 12px;
+    left: 12px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+========================================================= */
+
+@media (max-width: 360px) {
+  .paie-admin-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .paie-admin-topbar {
+    padding-left: 64px;
+  }
+
+  .paie-admin-section {
+    font-size: 13px;
+  }
+
+  .paie-admin-top-logout {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   ACCESIBILIDAD / MENOS ANIMACIONES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .paie-admin-sidebar,
+  .paie-mobile-menu-button .line,
+  .paie-admin-link,
+  .paie-admin-logout,
+  .paie-admin-top-logout {
+    transition: none;
+  }
+}
+/* =========================================================
+   REFINAMIENTO DE PRESENTACIÓN
+   Mantiene el diseño actual y mejora únicamente la distribución.
+========================================================= */
+
+.paie-admin-topbar-left,
+.paie-admin-topbar-right,
+.paie-admin-content {
+  min-width: 0;
+}
+
+.paie-admin-section {
+  line-height: 1.25;
+}
+
+.paie-admin-content {
+  overflow-x: clip;
+}
+
+@media (max-width: 760px) {
+  .paie-admin-content {
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+
+  .paie-admin-topbar {
+    min-height: 72px;
+    padding-left: 72px;
+  }
+}
+
+/* =========================================================
+   REFINAMIENTO VISUAL FINAL — LAYOUT
+========================================================= */
+.paie-admin-content { max-width:100%; }
+.paie-admin-content > * { max-width:1500px; margin-inline:auto; }
+.paie-admin-main { min-width:0; }
+@media (max-width:760px) {
+  .paie-admin-top-user { display:none; }
+  .paie-admin-content { padding-bottom:30px; }
+}
+
+/* =========================================================
+   ADMIN — SIDEBAR COLAPSABLE EN PC
+   La distribución se hace con flex para que encabezado y
+   contenido siempre sigan exactamente al ancho real del sidebar.
+========================================================= */
+
+@media (min-width: 1001px) {
+  .paie-admin-sidebar {
+    position: sticky;
+    flex: 0 0 270px;
+    width: 270px;
+    min-width: 270px;
+    transition:
+      width 0.25s ease,
+      flex-basis 0.25s ease,
+      min-width 0.25s ease,
+      padding 0.25s ease;
+  }
+
+  .paie-admin-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+  }
+
+  .paie-desktop-modules-toggle {
+    width: 52px;
+    height: 30px;
+    margin: 8px auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.025);
+    color: #8d8b98;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 1;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .paie-desktop-modules-toggle:hover {
+    background: rgba(200, 169, 107, 0.10);
+    color: #d8bd82;
+  }
+
+  .paie-desktop-modules-toggle span {
+    display: block;
+    transform: translateY(-1px);
+  }
+
+  .paie-admin.paie-modules-collapsed .paie-admin-sidebar {
+    flex-basis: 78px;
+    width: 78px;
+    min-width: 78px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .paie-admin.paie-modules-collapsed .paie-admin-brand {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .paie-admin.paie-modules-collapsed .paie-admin-brand-text,
+  .paie-admin.paie-modules-collapsed .paie-admin-nav-title,
+  .paie-admin.paie-modules-collapsed .paie-admin-link > span:not(.paie-admin-icon),
+  .paie-admin.paie-modules-collapsed .paie-admin-user-info,
+  .paie-admin.paie-modules-collapsed .paie-admin-logout > span:not(:first-child) {
+    display: none;
+  }
+
+  .paie-admin.paie-modules-collapsed .paie-admin-brand {
+    gap: 0;
+  }
+
+  .paie-admin.paie-modules-collapsed .paie-admin-divider {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .paie-admin.paie-modules-collapsed .paie-admin-nav {
+    padding-right: 0;
+  }
+
+  .paie-admin.paie-modules-collapsed .paie-admin-link {
+    justify-content: center;
+    gap: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .paie-admin.paie-modules-collapsed .paie-admin-icon {
+    width: 22px;
+    min-width: 22px;
+    font-size: 16px;
+  }
+
+  .paie-admin.paie-modules-collapsed .paie-admin-link.active::before {
+    left: -1px;
+  }
+
+  .paie-admin.paie-modules-collapsed .paie-admin-user {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .paie-admin.paie-modules-collapsed .paie-admin-logout {
+    justify-content: center;
+    gap: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .paie-admin.paie-modules-collapsed .paie-desktop-modules-toggle {
+    width: 52px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .paie-desktop-modules-toggle {
+    display: none;
+  }
+}

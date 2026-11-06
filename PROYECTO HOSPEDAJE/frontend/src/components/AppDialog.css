@@ -1,0 +1,273 @@
+
+/* =========================================================
+   PAIE ROYALE — DIÁLOGOS GLOBALES
+   Solo controla la presentación de avisos y confirmaciones.
+========================================================= */
+
+.pr-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(2, 5, 10, 0.72);
+  backdrop-filter: blur(10px);
+  animation: pr-dialog-fade-in 0.18s ease-out;
+}
+
+.pr-dialog {
+  width: min(520px, calc(100vw - 32px));
+  max-height: min(620px, calc(100vh - 40px));
+  overflow: auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  padding: 25px;
+  border: 1px solid rgba(212, 175, 55, 0.20);
+  border-radius: 22px;
+  color: var(--pr-white, #f7f4ec);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(23, 29, 41, 0.98),
+      rgba(7, 11, 19, 0.99)
+    );
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.58),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  animation: pr-dialog-rise 0.22s ease-out;
+}
+
+.pr-dialog-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #171208;
+  background: linear-gradient(
+    145deg,
+    #f2db87,
+    #c79c2e
+  );
+  box-shadow:
+    0 10px 26px rgba(212, 175, 55, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32);
+}
+
+.pr-dialog-error .pr-dialog-icon {
+  color: #fff;
+  background: linear-gradient(
+    145deg,
+    #d97878,
+    #9f4e58
+  );
+  box-shadow: 0 10px 26px rgba(217, 120, 120, 0.16);
+}
+
+.pr-dialog-warning .pr-dialog-icon {
+  color: #171208;
+  background: linear-gradient(
+    145deg,
+    #f1d778,
+    #b78b24
+  );
+}
+
+.pr-dialog-content {
+  min-width: 0;
+}
+
+.pr-dialog-content h2 {
+  margin: 2px 0 8px;
+  color: #f7f2e8;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(20px, 3vw, 25px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.pr-dialog-content p {
+  margin: 0;
+  color: #aaa39a;
+  font-size: 14px;
+  line-height: 1.65;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.pr-dialog-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(212, 175, 55, 0.10);
+}
+
+.pr-dialog-button {
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 11px;
+  font-weight: 700;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.pr-dialog-button:hover {
+  transform: translateY(-1px);
+}
+
+.pr-dialog-primary,
+.pr-dialog-success-action,
+.pr-dialog-warning-action {
+  color: #171208;
+  background: linear-gradient(
+    135deg,
+    #f1d778 0%,
+    #d4af37 48%,
+    #b78b24 100%
+  );
+  border: 1px solid rgba(240, 217, 138, 0.58);
+  box-shadow: 0 10px 24px rgba(212, 175, 55, 0.14);
+}
+
+.pr-dialog-error-action {
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #d97878,
+    #9f4e58
+  );
+  border: 1px solid rgba(217, 120, 120, 0.45);
+  box-shadow: 0 10px 24px rgba(217, 120, 120, 0.12);
+}
+
+.pr-dialog-secondary {
+  color: #eee9de;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(212, 175, 55, 0.20);
+}
+
+.pr-dialog-secondary:hover {
+  background: rgba(212, 175, 55, 0.075);
+  border-color: rgba(212, 175, 55, 0.38);
+}
+
+.pr-dialog-button:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.72);
+  outline-offset: 3px;
+}
+
+@keyframes pr-dialog-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pr-dialog-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .pr-dialog-overlay {
+    padding: 14px;
+  }
+
+  .pr-dialog {
+    width: min(100%, 520px);
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .pr-dialog-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .pr-dialog-actions {
+    justify-content: stretch;
+  }
+
+  .pr-dialog-button {
+    flex: 1 1 150px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pr-dialog-overlay,
+  .pr-dialog {
+    animation: none;
+  }
+
+  .pr-dialog-button {
+    transition: none;
+  }
+}
+
+
+.pr-dialog-symbol {
+  display: block;
+  line-height: 1;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.pr-password-field {
+  position: relative;
+  width: 100%;
+}
+
+.pr-password-field > input {
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 48px !important;
+}
+
+.pr-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 9px;
+  background: rgba(255,255,255,0.025);
+  color: #d4af37;
+}
+
+.pr-password-toggle:hover {
+  background: rgba(212,175,55,0.08);
+  border-color: rgba(212,175,55,0.32);
+}
+
+.pr-password-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

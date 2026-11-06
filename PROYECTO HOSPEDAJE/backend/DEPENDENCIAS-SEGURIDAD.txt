@@ -1,0 +1,15 @@
+PAIE ROYALE - ACTUALIZACION DE DEPENDENCIAS DE SEGURIDAD
+
+Se actualizaron las dependencias vulnerables detectadas por npm audit:
+- nodemailer -> ^9.1.1
+- multer -> ^2.3.0
+- qs -> 6.16.0 mediante overrides
+- uuid -> 11.1.1 mediante overrides (compatible con el uso CommonJS de ExcelJS)
+
+NO ejecutar npm audit fix --force.
+
+Después de descomprimir el proyecto, en backend ejecutar:
+  npm install
+  npm audit
+
+El npm install regenerará package-lock.json con las versiones seguras.

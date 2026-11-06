@@ -1,0 +1,1 @@
+export const swaggerSpec={openapi:'3.0.0',info:{title:'Sistema de Hospedaje API',version:'1.0.0'},servers:[{url:'/api/v1'}],paths:{'/auth/login':{post:{summary:'Iniciar sesión'}},'/habitaciones/disponibilidad':{get:{summary:'Consultar disponibilidad'}},'/reservas':{get:{summary:'Listar reservas'},post:{summary:'Crear reserva'}}}};
